@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Smart Touch</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero " id="home1">
+        <h2>Reliable and Fast Laundry Service</h2>
+        <p>We take care of your clothes, so you don't have to!</p>
+        <a href="info.html">
+        <button>Read More</button>
+        </a>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service zoom-container"  >
+                <img src="l1.jpeg" alt="Wash and Fold">
+                <h3>Wash & Fold</h3>
+                <p>Convenient and fast wash and fold service.</p>
+            </div>
+            <div class="service zoom-container">
+                <img src="l2.jpeg" alt="Dry Cleaning">
+                <h3>Dry Cleaning</h3>
+                <p>High-quality dry cleaning for your delicate garments.</p>
+            </div>
+            <div class="service zoom-container">
+                <img src="l4.jpeg" alt="Pickup and Delivery">
+                <h3>Pickup & Delivery</h3>
+                <p>We pick up and deliver your laundry at your convenience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="Editednow.jpg" alt="Gallery Image 1">
+            <img src="Editednow.jpg" alt="Gallery Image 2">
+            <img src="Editednow.jpg" alt="Gallery Image 2">
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-container" style="border:1px #ccc solid; border-radius:5px;">
+            <div class="testimonial">
+                <p>"The best laundry service I've ever used!" - Jane Doe</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+            </div>
+            <div class="testimonial">
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+                <br/>
+                <p>"Reliable, fast, and affordable. Highly recommend!" - John Smith</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!--<form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>-->
+        <div class="contactme">
+            <form action="action_page.php">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+              </select>
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+              <button type="submit" disabled>Submit</button>
+              <!--<input type="submit" value="Submit">-->
+            </form>
+          </div>
+          <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">Twitter</a>
+            <a href="mailto:info@laundryservice.com" class="social-icon email">Email</a>
+            <a href="https://web.whatsapp.com/" target="_blank" class="social-icon whatsapp">+14389251355</a>
+            
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Laundry Service. All rights reserved.</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slide');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        function moveSlide(n) {
+            let slides = document.querySelectorAll('.slide');
+            slideIndex += n;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex - 1].style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlides();
+        });
+    </script>
+</body>
+</html>
+
+
